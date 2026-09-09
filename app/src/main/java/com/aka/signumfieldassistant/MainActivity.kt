@@ -35,7 +35,7 @@ class MainActivity : ComponentActivity() {
     private val cameraLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { r ->
         if (r.resultCode == Activity.RESULT_OK) (r.data?.extras?.get("data") as? Bitmap)?.let { cameraBitmap = it }
     }
-    private var cameraBitmap: Bitmap? by mutableStateOf(null)
+    var cameraBitmap: Bitmap? by mutableStateOf(null)
     private val permissionLauncher = registerForActivityResult(ActivityResultContracts.RequestMultiplePermissions()) {}
 
     override fun onCreate(savedInstanceState: Bundle?) {
